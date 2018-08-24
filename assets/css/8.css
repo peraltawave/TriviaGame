@@ -1,0 +1,135 @@
+body {
+    /* background-image: url('../images/airmax.jpg'); */
+    font-family: 'Montserrat', sans-serif;
+        color: black;
+    letter-spacing: 0px;
+    background-color: #eee;
+}
+
+h1 {
+    font-size: 60px;
+    color: #333;
+}
+
+#splashscreen {
+    /* background-image: url('../images/nike-bg.png'); */
+    background-repeat: no-repeat;
+    width: 35%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.black-background {
+    background-color: #000000;
+}
+
+.red-background {
+    background-color: red;
+}
+
+
+.white {
+    color: #ffffff;
+}
+
+.splashBox {
+    margin: 0 auto;
+    text-align: center;
+    padding: 4%;
+    margin-top: 40%;
+}
+
+.splashBox2 {
+    margin: 0 auto;
+    text-align: center;
+    padding: 4%;
+}
+
+.wrongBox {
+    margin: 0 auto;
+    text-align: center;
+    padding: 4%;
+}
+
+label {
+    color: grey;
+    font-size: 16px;
+}
+
+#answerScreen {
+    display: none;
+    /* background-image: url('../images/nike-bg.png'); */
+    background-repeat: no-repeat;
+    width: 40%;
+    margin: 0 auto;
+    padding: 2%;
+    margin-top: 15%;
+    font-size: 21px;
+}
+
+#timesUp {
+    display: none;
+    /* background-image: url('../images/nike-bg.png'); */
+    background-repeat: no-repeat;
+    width: 35%;
+    margin: 0 auto;
+    padding: 2%;
+    margin-top: 15%;
+    font-size: 21px;
+}
+
+.up {
+    color: red;
+    font-weight: bold;
+}
+
+.timeRemain {
+    padding: 2%;
+    color: #333;
+    margin:auto;
+}
+
+.timeRemain #time-remain {
+    font-size: 40px;
+    font-weight: bold;
+    width: 80px;
+    margin:auto;
+}
+
+body .container {
+    /* background-image: url('../images/nike-bg.png'); */
+    height: 100%;
+    text-align: center;
+    display: none;
+    margin-bottom: 5%;
+    padding-bottom: 2%;
+    margin-top: 5%;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.questions {
+    font-size: 25px;
+    ]
+}
+
+.ques,
+label {
+    padding: 1%;
+}
+
+header {
+    font-size: 60px;
+    color: black;
+    margin-top: 2%;
+}
+
+
+/* #playAgain {
+    font-size: 20px;
+    color: black;
+    margin-top: 2%;
+    
+    cursor: pointer;
+} */

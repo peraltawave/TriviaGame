@@ -2,66 +2,75 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Horrible Trivia Game</title>
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
-
-    <title>Trivia Game // Homework // Javascript 2 // Easy One</title>
-</head>
-
-<body>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/8.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-
-<!------ MIGUELS SCRIPTING GOES HERE ----------------->
-<script>
-setTimeout(timeUp, 1000 * 5);
-
-function sixtySeconds() {
-
-// in the element with an id of time-left add an h2 saying About 5 Seconds Left!
-// console log 5 seconds left
-$("#time-left").append("About 60 Seconds Left!");
-console.log("60 seconds left");
-}
-function timeUp() {
-
-// in the element with an id of time-left add an h2 saying Time's Up!
-// console log done
-console.log("done");
-$("#time-left").append("Time's Up!");
-console.log("time is up");
-
-//  The following line will play the audio file we linked to above:
-
-}
-
-</script>
-
-<!---------------------------------------------------->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
 
-    <div class="jumbotron">
-        <h1 class="display-4">Trivia Game</h1>
-        <div id="time-left" class="lead">Time Remaining: <span></span></div>
-        <hr class="my-4">
-        <div id="question1"><span></span></div>
-        <div class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Start Game</a>
+
+<body>
+    <div id="splashscreen">
+        <div class="splashBox">
+            <h3 style="text-transform: uppercase;">Welcome to</h3>
+            <h1>Horrible Trivia!</h1>
+            <hr />
+            <p>You have 60 seconds to guess 5 questions.</p>
+            <br />
+
+            <button type="button" id="start-btn" class="btn btn-primary btn-lg">BEGIN GAME</button>
         </div>
     </div>
 
+    <div id="answerScreen">
+        <div class="splashBox2">
+            <h2>Let's see how you did</h2>
+            <hr />
+            <p id="correctScreen">Correct Answers: </p>
+            <p id="wrongScreen">Wrong Answers: </p>
+            <button type="button" id="playAgain" class="btn btn-primary btn-lg">PLAY AGAIN</button>
+            <!-- <p id="playAgain">Play Again</p> -->
+
+        </div>
+    </div>
+
+
+    <div id="timesUp">
+        <div class="wrongBox">
+            <h2 class="up">Times Up!</h2>
+            <hr />
+            <p>Here's youre score:</p>
+            <p id="correctTimesUp">Correct Answers: </p>
+            <p id="wrongTimesUp">Wrong Answers: </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>Horrible Trivia!</header>
+        <div class="timeRemain">Seconds Remaining:
+            <div style="clear: left;">&nbsp;</div>
+            <div id="time-remain" class="rounded red-background white">60</div>
+        </div>
+
+        <div class="questions">
+            <button type="button" class="btn btn-primary btn-lg" id="sub-but">SUBMIT ANSWERS</button>
+            <!-- end equestions-->
+        </div>
+
+        <!-- Main Container-->
+    </div>
+    <script src="assets/javascript/8_mig.js "></script>
 </body>
 
 </html>
