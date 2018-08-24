@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <title>Trivia Game // Homework // Javascript 2 // Easy One</title>
+    <style type="text/css">
+        button,
+        div,
+        form,
+        input {
+            margin: 10px;
+        }
+
+        .qbold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <h1 class="display-4">Trivia Game</h1>
+        <div id="time-left" class="lead">Time Remaining: <span id="fred">5 secs</span></div>
+        <hr class="my-4">
+
+        <div class="lead">
+            <input class="btn btn-primary btn-lg" id="start-game" type="submit" value="Start Game Bro">
+            <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Start Game</a> -->
+        </div>
+    </div>
+
+
+    <!-- questions will Get Dumped Here -->
+    <div id="questionDiv">
+        <div class="qbold" id="question1"></div>
+        <div id="answer1"></div>
+        <div class="qbold" id="question2"></div>
+        <div id="answer2"></div>
+        <div class="qbold" id="question3"></div>
+        <div id="answer3"></div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+    <!------ MIGUELS SCRIPTING GOES HERE ----------------->
+    <script>
+
+        var allQuestions = ["What won't ants cross?", "Michael or LeBron?", "Over or Under?"]
+        //var allAnswers = [["Red", "white", "green"], ["Michael", "LeBron"], ["Over", "Under"]]
+
+        var allAnswers1 = {
+            a: "Red",
+            b: "White",
+            c: "Green"
+        };
+
+        var allAnswers2 = {
+            a: "Michael",
+            b: "LeBron"
+        };
+
+        var allAnswers3 = {
+            a: "Over",
+            b: "Under"
+        };
+
+        // This function handles events where one button is clicked and starts the game
+        //$("#start-game").on("click", timer());
+        $("#question1").empty();
+        $("#start-game").click(function () {
+
+            document.getElementById("question1").innerHTML = allQuestions[0]; // this is where I put in the questions div
+            document.getElementById("answer1").innerHTML = allAnswers1.a + allAnswers1.b + allAnswers1.c; // this is where I put in the questions div
+
+            document.getElementById("question2").innerHTML = allQuestions[1]; // this is where I put in the questions div
+            document.getElementById("answer2").innerHTML = allAnswers2.a + allAnswers2.b; // this is where I put in the questions div
+
+            document.getElementById("question3").innerHTML = allQuestions[2]; // this is where I put in the questions div
+            document.getElementById("answer3").innerHTML = allAnswers3.a + allAnswers3.b; // this is where I put in the questions div
+
+
+            var count = 5; // this will eventually be longer, used 5 for testing
+            var counter = setInterval(timer, 1000); //1000 will  run it every 1 second
+            function timer() {
+                count = count - 1;
+                if (count <= 0) {
+                    clearInterval(counter);
+                    if (count === 0) { //  Alert the user that time is up once number hits zero...
+                        alert("Time Up!");
+                    } return;
+                }
+                document.getElementById("fred").innerHTML = count + " secs"; // watch for spelling
+            }
+
+
+
+        }
+
+
+
+
+
+        );
+        //event.preventDefault();
+
+        // This line grabs the input from the textbox
+        // var movie = $("#movie-input").val().trim();
+
+        // Adding the movie from the textbox to our array
+        //movies.push(movie);
+        //console.log(movies);
+
+        // Calling renderButtons which handles the processing of our movie array
+
+
+
+
+
+
+    </script>
+
+    <!---------------------------------------------------->
+
+
+
+
+
+
+
+</body>
+
+</html>
