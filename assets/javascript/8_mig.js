@@ -102,6 +102,9 @@ var countdown = function(seconds) {
             // display wrongAnswers
             $('#wrongTimesUp').append(wrongAnswers);
             $('#timesUp').fadeIn(1000).show();
+            $('#playAgain2').on('click' , function() { // to reload the pageeee boyeeee
+                location.reload();
+            });
 
             // alert("Times Up!");
             clearInterval(timer);
