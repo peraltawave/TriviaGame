@@ -11,7 +11,7 @@
 
 var questions = [{
             ques: "Which fictional city is the home of Batman?",
-            ans: ["Gotham", "Detroit", "Chicago", "Tucson"],
+            ans: ["Gotham City", "Detroit", "Chicago", "Tucson"],
             name: "batMan",
             correct: "Gotham City",
             divClass: ".batMan"
