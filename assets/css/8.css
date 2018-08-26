@@ -12,7 +12,7 @@ h1 {
 
 #splashscreen {
     background-repeat: no-repeat;
-    width: 35%;
+    width: 75%;
     margin: 0 auto;
     border-radius: 5px;
 }
@@ -34,7 +34,7 @@ h1 {
     margin: 0 auto;
     text-align: center;
     padding: 4%;
-    margin-top: 40%;
+    margin-top: 25%;
 }
 
 .splashBox2 {

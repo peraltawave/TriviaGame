@@ -1,56 +1,51 @@
-///////////////////
-// Sneaker      //
-//      Trivia 
-// https://github.com/ricopella/nike-trivia-game
-/////////////////
-
-
-
 // this is an object that holds all of the questions, answers,  
-
+// here we go
 
 var questions = [{
-            ques: "Which fictional city is the home of Batman?",
-            ans: ["Gotham City", "Detroit", "Chicago", "Tucson"],
-            name: "batMan",
-            correct: "Gotham City",
-            divClass: ".batMan"
-        },
-        {
-            ques: "Babe Ruth is associated with which sport?",
-            ans: ["Baseball", "Basketball", "Hockey", "Chess"],
-            name: "babeRuth",
-            correct: "Baseball",
-            divClass: ".babeRuth"
-        },
-        {
-            ques: "Which 1997 film stars Nicolas Cage, John Cusack, and John Malkovich?",
-            ans: ["Con Air", "Real Steel", "Endless Summer", "Napolean Dynamite"],
-            name: "conAir",
-            correct: "Con Air",
-            divClass: ".conAir"
-        },
-        {
-            ques: "Which 80s movie was the highest grossing film of the decade?",
-            ans: ["E.T. The Extraterrestrial", "Space Jam", "Journey", "Styx"],
-            name: "et",
-            correct: "E.T. The Extraterrestrial",
-            divClass: ".et"
-        },
-        {
-            ques: "What artist sang the 1986 song “Danger Zone” from Top Gun?",
-            ans: ["Kenny Loggins", "Renny Loggins", "Kenny Boggins", "Cher"],
-            name: "dangerZone",
-            correct: "Kenny Loggins",
-            divClass: ".dangerZone"
-        }
+    ques: "Which fictional city is the home of Batman?",
+    ans: ["Gotham City", "Detroit", "Chicago", "Tucson"],
+    name: "batMan",
+    correct: "Gotham City",
+    divClass: ".batMan"
+},
+{
+    ques: "Babe Ruth is associated with which sport?",
+    ans: ["Baseball", "Basketball", "Hockey", "Chess"],
+    name: "babeRuth",
+    correct: "Baseball",
+    divClass: ".babeRuth"
+},
+{
+    ques: "Which 1997 film stars Nicolas Cage, John Cusack, and John Malkovich?",
+    ans: ["Con Air", "Real Steel", "Endless Summer", "Napolean Dynamite"],
+    name: "conAir",
+    correct: "Con Air",
+    divClass: ".conAir"
+},
+{
+    ques: "Which 80s movie was the highest grossing film of the decade?",
+    ans: ["E.T. The Extraterrestrial", "Space Jam", "Journey", "Styx"],
+    name: "et",
+    correct: "E.T. The Extraterrestrial",
+    divClass: ".et"
+},
+{
+    ques: "What artist sang the 1986 song “Danger Zone” from Top Gun?",
+    ans: ["Kenny Loggins", "Renny Loggins", "Kenny Boggins", "Cher"],
+    name: "dangerZone",
+    correct: "Kenny Loggins",
+    divClass: ".dangerZone"
+}
 
-    ] // end questions object
+] // end questions object
 
-var labels = ["first", "second", "third", "forth"];
+
+
+// these arew my labels for the radio buttons
+var labels = ["first", "second", "third", "fourth"];
 
 // click to start then display quesions
-var startGame = $("#start-btn").on('click', function() {
+var startGame = $("#start-btn").on('click', function () {
     $(this).parent().hide();
     $('.container').show();
     countdown(60);
@@ -58,7 +53,7 @@ var startGame = $("#start-btn").on('click', function() {
 });
 
 // function for displaying questions
-var questionDisplay = function() {
+var questionDisplay = function () {
     $(".questions :not('#sub-but')").empty();
     // loops through the 10 questions 
     for (var j = 0; j < 5; j++) {
@@ -74,9 +69,9 @@ var questionDisplay = function() {
 
 
 // function for countdown timer
-var countdown = function(seconds) {
+var countdown = function (seconds) {
 
-    var timer = setInterval(function() {
+    var timer = setInterval(function () {
         seconds = seconds - 1;
         $("#time-remain").html(seconds);
 
@@ -86,7 +81,7 @@ var countdown = function(seconds) {
             var wrongAnswers = 0;
             var unAnswered = 0;
 
-            // loop through correctArray & radioName to match html elements & answers
+            // loop through correctArray and radioName - match html elements & answers --- this is where the radio buttons are built
             for (var i = 0; i < 5; i++) {
 
                 if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
@@ -102,8 +97,8 @@ var countdown = function(seconds) {
             // display wrongAnswers
             $('#wrongTimesUp').append(wrongAnswers);
             $('#timesUp').fadeIn(1000).show();
-            $('#playAgain2').on('click' , function() { // to reload the pageeee boyeeee
-                location.reload();
+            $('#playAgain2').on('click', function () { // to reload the pageeee boyeeee
+                location.reload(); // refreshes the page
             });
 
             // alert("Times Up!");
@@ -113,43 +108,47 @@ var countdown = function(seconds) {
     }, 1000);
 
     // click event for submit button to stop timer
-    $('#sub-but').on('click', function() {
+    $('#sub-but').on('click', function () {
         clearInterval(timer);
     })
 }; // end countdown
 
 
 // function to grade quiz once submit button is clicked
-var gradeQuiz = $('#sub-but').on('click', function() {
+var gradeQuiz = $('#sub-but').on('click', function () {
 
     var correctAnswers = 0;
     var wrongAnswers = 0;
     var unAnswered = 0;
 
-    // loop through correctArray & radioName to match html elements & answers
+    // loop through correctArray and radioName
     for (var i = 0; i < 5; i++) {
 
         if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
 
             correctAnswers++;
+            console.log(correctAnswers); // check console to see this output
         } else {
             wrongAnswers++;
-            $('#playAgain').on('click' , function() { // to reload the pageeee boyeeee
+            $('#playAgain').on('click', function () { // to reload the pageeee boyeeee
                 location.reload();
             });
         };
     };
 
-    // once submit is clicked...
-    // tests
-    // stop timer
+    //  SUBMIT clicked
+    // STOP timer
+
     countdown();
     // fade out questions
     $('.container').fadeOut(500);
+
     // show answerScreen
     $('#answerScreen').show();
+
     // display correctAnswers
     $('#correctScreen').append(correctAnswers);
+
     // display wrongAnswers
     $('#wrongScreen').append(wrongAnswers);
 
